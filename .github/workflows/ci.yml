@@ -18,18 +18,18 @@ jobs:
       - name: Run Linter
         run: npm run lint
   lhci:
-  name: Lighthouse
-  runs-on: ubuntu-latest
-  steps:
-    - name: Git clone
-      uses: actions/checkout@v3
-    - name: Setup NodeJs
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18.x
-    - name: Install
-      run: npm ci
-    - name: build
-      run: npm run build
-    - name: Run Lighthouse
-      run: npx lhci autorun
+    name: Lighthouse
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone
+        uses: actions/checkout@v3
+      - name: Setup NodeJs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - name: Install
+        run: npm ci
+      - name: build
+        run: npm run build
+      - name: Run Lighthouse
+        run: npx lhci autorun
